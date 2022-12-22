@@ -1,0 +1,68 @@
+{
+  "name": "capibara",
+  "displayName": "Capibara",
+  "description": "Crowd-sourced C API hover definitions.",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.73.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "capabilities": {
+    "untrustedWorkspaces": {
+      "supported": true
+    },
+    "virtualWorkspaces": true
+  },
+  "activationEvents": [
+    "onCommand:capibara.fetchLatestDefinitions",
+    "onLanguage:c"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "capibara.fetchLatestDefinitions",
+        "title": "Capibara: Fetch Latest Definitions"
+      }
+    ],
+    "configuration": {
+      "title": "Capibara",
+      "properties": {
+        "capibara.definitionsFileURL": {
+          "type": "string",
+          "default": "https://capibara.tools/capibara.json",
+          "description": "Capibara definitions file URL"
+        }
+      }
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint src --ext ts",
+    "test": "node ./out/test/runTest.js"
+  },
+  "devDependencies": {
+    "@types/glob": "^8.0.0",
+    "@types/mocha": "^10.0.1",
+    "@types/node": "16.x",
+    "@types/vscode": "^1.73.0",
+    "@typescript-eslint/eslint-plugin": "^5.45.0",
+    "@typescript-eslint/parser": "^5.45.0",
+    "@vscode/test-electron": "^2.2.0",
+    "eslint": "^8.28.0",
+    "glob": "^8.0.3",
+    "mocha": "^10.1.0",
+    "typescript": "^4.9.3"
+  },
+  "dependencies": {
+    "@microsoft/vscode-file-downloader-api": "^1.0.1"
+  },
+  "extensionDependencies": [
+    "mindaro-dev.file-downloader"
+  ]
+}
