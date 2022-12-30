@@ -2,6 +2,7 @@
   "name": "capibara",
   "displayName": "Capibara",
   "description": "Crowd-sourced C API hover definitions.",
+  "icon": "images/logo.png",
   "author": {"name": "Justin Woodring", "url": "https://justinwoodring.com"},
   "publisher": "Capibara",
   "sponsor": {
