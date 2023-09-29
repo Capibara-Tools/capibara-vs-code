@@ -78,6 +78,15 @@ export async function activate(context: vscode.ExtensionContext) {
         }
         response += "\n\n__Environments:__\t" + mo.os_affinity.join(",");
         response += "\n\n__Description:__\n\n" + mo.description;
+        if((mo.kind as FunctionKind).function !== undefined) {
+          const fn = (mo.kind as FunctionKind).function;
+          response += "\n\n__Examples:__\n\n";
+          fn.examples.forEach((example) => {
+            response += "\n\n - ";
+            response += "__"+example.title+"__";
+            response += "\n\n";
+            response += "```"+example.code+"```";
+        });}
         response += "\n\n";
       });
 
@@ -203,6 +212,13 @@ export async function activate(context: vscode.ExtensionContext) {
         });
         response += "\n\n__Environments:__\t" + fn.os_affinity.join(",");
         response += "\n\n__Description:__\n\n" + fn.description;
+        response += "\n\n__Examples:__\n\n";
+        fn.examples.forEach((example) => {
+          response += "\n\n - ";
+          response += "__"+example.title+"__";
+          response += "\n\n";
+          response += "```"+example.code+"```";
+        });
         response += "\n\n";
       });
 

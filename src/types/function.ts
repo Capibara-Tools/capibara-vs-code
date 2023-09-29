@@ -8,6 +8,7 @@ export type Function = {
     returns: Return,
     parameters: Parameter[],
     description: string,
+    examples: Example[],
     associated: string[],
     os_affinity: string[]
 };
@@ -21,5 +22,10 @@ type Parameter = {
     name: string,
     type: string,
     description: string,
+};
+
+type Example = {
+    title: string,
+    code: string,
 };
 

@@ -24,7 +24,8 @@ type Object = {};
 
 type Function = {
     returns: Return,
-    parameters: Parameter[]
+    parameters: Parameter[],
+    examples: Example[]
 };
 
 type Return = {
@@ -35,5 +36,10 @@ type Return = {
 type Parameter = {
     name: string,
     description: string,
+};
+
+type Example = {
+    title: string,
+    code: string,
 };
 

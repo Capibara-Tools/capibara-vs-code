@@ -26,6 +26,10 @@ This extension contributes the following settings:
 
 ## Release Notes
 
+### 1.1.0
+
+Add example support.
+
 ### 1.0.0
 
 Initial release of capibara-vs-code.
